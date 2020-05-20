@@ -8,29 +8,21 @@
 
 import SwiftUI
 
-struct ContactListView: View {
+struct MainView: View {
     @EnvironmentObject var userData: UserData
-    @Environment(\.presentationMode) var presentationMode // to fix modal dismiss bug
-    @State private var editMode = EditMode.inactive
-    @State private var isAddContactModalVisible = false
     
+    @ViewBuilder
     var body: some View {
-        List {
-            ForEach(userData.contacts, id: \.id) { contact in
-                ContactRow(contact: contact)
+        if userData.contacts.count > 0 {
+            List {
+                ForEach(userData.contacts, id: \.id) { contact in
+                    ContactRow(contact: contact)
+                }
+                .onDelete(perform: onDelete)
             }
-            .onDelete(perform: onDelete)
+        } else {
+            EmptyContactsView()
         }
-        .navigationBarTitle(Text("Temp Contacts"))
-        .navigationBarItems(leading: Button(action: {
-                self.isAddContactModalVisible.toggle()
-            }) {
-                Image(systemName: "plus").imageScale(.large)
-            }, trailing: EditButton())
-        .sheet(isPresented: $isAddContactModalVisible) {
-            AddContactView(isModalVisible: self.$isAddContactModalVisible).environmentObject(self.userData)
-            }
-        .environment(\.editMode, $editMode)
     }
     
     private func onDelete(offsets: IndexSet) {
@@ -42,6 +34,27 @@ struct ContactListView: View {
             }
         }
         self.userData.contacts.remove(atOffsets: offsets)
+    }
+}
+
+struct ContactListView: View {
+    @EnvironmentObject var userData: UserData
+    @Environment(\.presentationMode) var presentationMode // to fix modal dismiss bug
+    @State private var editMode = EditMode.inactive
+    @State private var isAddContactModalVisible = false
+    
+    var body: some View {
+        MainView()
+        .navigationBarTitle(Text("Temp Contacts"))
+        .navigationBarItems(leading: Button(action: {
+                self.isAddContactModalVisible.toggle()
+            }) {
+                Image(systemName: "plus").imageScale(.large)
+            }, trailing: EditButton())
+        .sheet(isPresented: $isAddContactModalVisible) {
+            AddContactView(isModalVisible: self.$isAddContactModalVisible).environmentObject(self.userData)
+            }
+        .environment(\.editMode, $editMode)
     }
 }
 
