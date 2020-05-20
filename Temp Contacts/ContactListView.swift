@@ -34,6 +34,7 @@ struct MainView: View {
             }
         }
         self.userData.contacts.remove(atOffsets: offsets)
+        self.userData.contacts = self.userData.contacts // fix swift 5.2 bug
     }
 }
 

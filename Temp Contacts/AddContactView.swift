@@ -68,6 +68,8 @@ struct AddContactView: View {
                 let contact = Contact.init(name: self.name, number: self.number)
                 
                 self.userData.contacts.append(contact)
+                self.userData.contacts = self.userData.contacts // fix swift 5.2 bug
+                
                 self.userData.contactsToAdd.append(contact)
                 self.isModalVisible.toggle()
             }, label: {
