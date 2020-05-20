@@ -26,17 +26,26 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
 
         context.completeRequest()
     }
+    
+    private func prepareContactList(contacts:[Contact]) -> [Contact] {
+        return contacts
+            .filter {
+                $0.getNormalizedNumber() != nil
+            }
+            .sorted {
+                $0.getNormalizedNumber()! < $1.getNormalizedNumber()!
+            }
+    }
+    
     private func addAllIdentificationPhoneNumbers(to context: CXCallDirectoryExtensionContext) {
         // Retrieve phone numbers to identify and their identification labels from data store. For optimal performance and memory usage when there are many phone numbers,
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
         //
         // Numbers must be provided in numerically ascending order.
-        let data = UserData().contacts.sorted {
-            Int64($0.number)! < Int64($1.number)!
-        }
+        let data = prepareContactList(contacts: UserData().contacts)
 
         for contact in data {
-            context.addIdentificationEntry(withNextSequentialPhoneNumber: Int64(contact.number)!, label: contact.name)
+            context.addIdentificationEntry(withNextSequentialPhoneNumber: contact.getNormalizedNumber()!, label: contact.name)
         }
     }
 
@@ -44,20 +53,16 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // Retrieve any changes to the set of phone numbers to identify (and their identification labels) from data store. For optimal performance and memory usage when there are many phone numbers,
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
         
-        let phoneNumbersToRemove: [CXCallDirectoryPhoneNumber] = UserData().contactsToRemove.map {
-            Int64($0)!
-        }
+        let phoneNumbersToRemove: [CXCallDirectoryPhoneNumber] = UserData().contactsToRemove
 
         for phoneNumber in phoneNumbersToRemove {
             context.removeIdentificationEntry(withPhoneNumber: phoneNumber)
         }
 
-        let data = UserData().contactsToAdd.sorted {
-            Int64($0.number)! < Int64($1.number)!
-        }
+        let data = prepareContactList(contacts: UserData().contactsToAdd)
 
         for contact in data {
-            context.addIdentificationEntry(withNextSequentialPhoneNumber: Int64(contact.number)!, label: contact.name)
+            context.addIdentificationEntry(withNextSequentialPhoneNumber: contact.getNormalizedNumber()!, label: contact.name)
         }
         
         UserData().contactsToRemove.removeAll()

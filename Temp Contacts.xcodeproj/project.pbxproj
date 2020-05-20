@@ -23,6 +23,8 @@
 		8E81F4DC24749B930007976A /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E632124676128006A45E9 /* Contact.swift */; };
 		8E81F4DD24749B960007976A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E632724739BE8006A45E9 /* UserData.swift */; };
 		8E81F4DE24749B990007976A /* UserDefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E632524739B4D006A45E9 /* UserDefaultValue.swift */; };
+		8E81F4E02474B3BB0007976A /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E81F4DF2474B3BB0007976A /* PhoneNumberKit.framework */; };
+		8E81F4E42475BBD80007976A /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E81F4DF2474B3BB0007976A /* PhoneNumberKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,7 @@
 		8E81F4C724748B440007976A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E81F4D5247493A30007976A /* Temp Contacts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Temp Contacts.entitlements"; sourceTree = "<group>"; };
 		8E81F4D6247493D00007976A /* TempContactsDir.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TempContactsDir.entitlements; sourceTree = "<group>"; };
+		8E81F4DF2474B3BB0007976A /* PhoneNumberKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhoneNumberKit.framework; path = Carthage/Build/iOS/PhoneNumberKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E81F4E02474B3BB0007976A /* PhoneNumberKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E81F4E42475BBD80007976A /* PhoneNumberKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +99,8 @@
 				8E2E630724675B20006A45E9 /* Temp Contacts */,
 				8E81F4C424748B440007976A /* TempContactsDir */,
 				8E2E630624675B20006A45E9 /* Products */,
+				8E81F4DF2474B3BB0007976A /* PhoneNumberKit.framework */,
+				8E81F4E32475BBD80007976A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +151,13 @@
 			path = TempContactsDir;
 			sourceTree = "<group>";
 		};
+		8E81F4E32475BBD80007976A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,6 +169,7 @@
 				8E2E630224675B20006A45E9 /* Frameworks */,
 				8E2E630324675B20006A45E9 /* Resources */,
 				8E81F4CE24748B440007976A /* Embed App Extensions */,
+				8E81F4E12474B5170007976A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -173,6 +188,7 @@
 				8E81F4BF24748B440007976A /* Sources */,
 				8E81F4C024748B440007976A /* Frameworks */,
 				8E81F4C124748B440007976A /* Resources */,
+				8E81F4E22475BB970007976A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -239,6 +255,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8E81F4E12474B5170007976A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/PhoneNumberKit.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PhoneNumberKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		8E81F4E22475BB970007976A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/PhoneNumberKit.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PhoneNumberKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8E2E630124675B20006A45E9 /* Sources */ = {
@@ -413,6 +470,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Temp Contacts/Preview Content\"";
 				DEVELOPMENT_TEAM = 628VZA2867;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Temp Contacts/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -435,6 +496,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Temp Contacts/Preview Content\"";
 				DEVELOPMENT_TEAM = 628VZA2867;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Temp Contacts/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -454,6 +519,10 @@
 				CODE_SIGN_ENTITLEMENTS = TempContactsDir/TempContactsDir.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 628VZA2867;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TempContactsDir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -475,6 +544,10 @@
 				CODE_SIGN_ENTITLEMENTS = TempContactsDir/TempContactsDir.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 628VZA2867;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TempContactsDir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

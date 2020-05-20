@@ -7,6 +7,44 @@
 //
 
 import SwiftUI
+import PhoneNumberKit
+
+struct PhoneNumberTextFieldView: UIViewRepresentable {
+    
+    @Binding var phoneNumber: String
+    
+    func makeUIView(context: Context) -> PhoneNumberTextField {
+        let textField = PhoneNumberTextField()
+        
+        textField.delegate = context.coordinator
+        textField.withExamplePlaceholder = true
+        textField.withPrefix = true
+        textField.placeholder = "Phone number"
+        textField.becomeFirstResponder()
+        
+        return textField
+    }
+
+    func updateUIView(_ view: PhoneNumberTextField, context: Context) {
+        view.text = phoneNumber
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator($phoneNumber)
+    }
+    
+    class Coordinator: NSObject, UITextFieldDelegate {
+        var text: Binding<String>
+
+        init(_ text: Binding<String>) {
+            self.text = text
+        }
+        
+        func textFieldDidEndEditing(_ textField: UITextField) {
+            self.text.wrappedValue = textField.text ?? ""
+        }
+    }
+}
 
 struct AddContactView: View {
     @Binding var isModalVisible: Bool
@@ -17,9 +55,9 @@ struct AddContactView: View {
     var body: some View {
         NavigationView {
             Form {
-                TextField("Name", text: $name)
-                TextField("Number", text: $number)
+                PhoneNumberTextFieldView(phoneNumber: $number)
                     .keyboardType(.phonePad)
+                TextField("Name", text: $name)
             }
             .navigationBarTitle(Text("Add contact"))
             .navigationBarItems(leading: Button(action: {
@@ -28,6 +66,7 @@ struct AddContactView: View {
                 Text("Cancel")
             }), trailing: Button(action: {
                 let contact = Contact.init(name: self.name, number: self.number)
+                
                 self.userData.contacts.append(contact)
                 self.userData.contactsToAdd.append(contact)
                 self.isModalVisible.toggle()

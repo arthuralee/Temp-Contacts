@@ -27,7 +27,7 @@ final class UserData: ObservableObject {
             dataStore.setKey(key: contactsToAdd_key, value: self.contactsToAdd)
         }
     }
-    var contactsToRemove: [String] {
+    var contactsToRemove: [Int64] {
         didSet {
             dataStore.setKey(key: contactsToRemove_key, value: self.contactsToRemove)
         }

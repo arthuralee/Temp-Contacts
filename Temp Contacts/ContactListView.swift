@@ -36,7 +36,10 @@ struct ContactListView: View {
     private func onDelete(offsets: IndexSet) {
         offsets.forEach { (i) in
             let contact = self.userData.contacts[i]
-            self.userData.contactsToRemove.append(contact.number)
+            let phoneNumber = contact.getNormalizedNumber()
+            if (phoneNumber != nil) {
+                self.userData.contactsToRemove.append(phoneNumber!)
+            }
         }
         self.userData.contacts.remove(atOffsets: offsets)
     }
