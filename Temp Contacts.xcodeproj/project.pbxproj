@@ -9,27 +9,76 @@
 /* Begin PBXBuildFile section */
 		8E2E630924675B20006A45E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E630824675B20006A45E9 /* AppDelegate.swift */; };
 		8E2E630B24675B20006A45E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E630A24675B20006A45E9 /* SceneDelegate.swift */; };
-		8E2E630E24675B20006A45E9 /* Temp_Contacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E630C24675B20006A45E9 /* Temp_Contacts.xcdatamodeld */; };
-		8E2E631024675B20006A45E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E630F24675B20006A45E9 /* ContentView.swift */; };
+		8E2E631024675B20006A45E9 /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E630F24675B20006A45E9 /* ContactListView.swift */; };
 		8E2E631224675B23006A45E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E2E631124675B23006A45E9 /* Assets.xcassets */; };
 		8E2E631524675B23006A45E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E2E631424675B23006A45E9 /* Preview Assets.xcassets */; };
 		8E2E631824675B23006A45E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E2E631624675B23006A45E9 /* LaunchScreen.storyboard */; };
+		8E2E632024675E3E006A45E9 /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E631F24675E3E006A45E9 /* ContactRow.swift */; };
+		8E2E632224676128006A45E9 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E632124676128006A45E9 /* Contact.swift */; };
+		8E2E632624739B4D006A45E9 /* UserDefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E632524739B4D006A45E9 /* UserDefaultValue.swift */; };
+		8E2E632824739BE8006A45E9 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E632724739BE8006A45E9 /* UserData.swift */; };
+		8E81F4BE2473A1690007976A /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81F4BD2473A1690007976A /* AddContactView.swift */; };
+		8E81F4C624748B440007976A /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81F4C524748B440007976A /* CallDirectoryHandler.swift */; };
+		8E81F4CA24748B440007976A /* TempContactsDir.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8E81F4C324748B440007976A /* TempContactsDir.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8E81F4DC24749B930007976A /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E632124676128006A45E9 /* Contact.swift */; };
+		8E81F4DD24749B960007976A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E632724739BE8006A45E9 /* UserData.swift */; };
+		8E81F4DE24749B990007976A /* UserDefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E632524739B4D006A45E9 /* UserDefaultValue.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8E81F4C824748B440007976A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E2E62FD24675B20006A45E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E81F4C224748B440007976A;
+			remoteInfo = TempContactsDir;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8E81F4CE24748B440007976A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8E81F4CA24748B440007976A /* TempContactsDir.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8E2E630524675B20006A45E9 /* Temp Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Temp Contacts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E2E630824675B20006A45E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E2E630A24675B20006A45E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8E2E630D24675B20006A45E9 /* Temp_Contacts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Temp_Contacts.xcdatamodel; sourceTree = "<group>"; };
-		8E2E630F24675B20006A45E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8E2E630F24675B20006A45E9 /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
 		8E2E631124675B23006A45E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E2E631424675B23006A45E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8E2E631724675B23006A45E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E2E631924675B23006A45E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E2E631F24675E3E006A45E9 /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
+		8E2E632124676128006A45E9 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		8E2E632524739B4D006A45E9 /* UserDefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultValue.swift; sourceTree = "<group>"; };
+		8E2E632724739BE8006A45E9 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		8E81F4BD2473A1690007976A /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
+		8E81F4C324748B440007976A /* TempContactsDir.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TempContactsDir.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E81F4C524748B440007976A /* CallDirectoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandler.swift; sourceTree = "<group>"; };
+		8E81F4C724748B440007976A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E81F4D5247493A30007976A /* Temp Contacts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Temp Contacts.entitlements"; sourceTree = "<group>"; };
+		8E81F4D6247493D00007976A /* TempContactsDir.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TempContactsDir.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8E2E630224675B20006A45E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E81F4C024748B440007976A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				8E2E630724675B20006A45E9 /* Temp Contacts */,
+				8E81F4C424748B440007976A /* TempContactsDir */,
 				8E2E630624675B20006A45E9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				8E2E630524675B20006A45E9 /* Temp Contacts.app */,
+				8E81F4C324748B440007976A /* TempContactsDir.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,14 +109,19 @@
 		8E2E630724675B20006A45E9 /* Temp Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				8E2E632124676128006A45E9 /* Contact.swift */,
+				8E2E632524739B4D006A45E9 /* UserDefaultValue.swift */,
+				8E2E632724739BE8006A45E9 /* UserData.swift */,
+				8E81F4D5247493A30007976A /* Temp Contacts.entitlements */,
 				8E2E630824675B20006A45E9 /* AppDelegate.swift */,
 				8E2E630A24675B20006A45E9 /* SceneDelegate.swift */,
-				8E2E630F24675B20006A45E9 /* ContentView.swift */,
+				8E2E630F24675B20006A45E9 /* ContactListView.swift */,
 				8E2E631124675B23006A45E9 /* Assets.xcassets */,
 				8E2E631624675B23006A45E9 /* LaunchScreen.storyboard */,
 				8E2E631924675B23006A45E9 /* Info.plist */,
-				8E2E630C24675B20006A45E9 /* Temp_Contacts.xcdatamodeld */,
 				8E2E631324675B23006A45E9 /* Preview Content */,
+				8E2E631F24675E3E006A45E9 /* ContactRow.swift */,
+				8E81F4BD2473A1690007976A /* AddContactView.swift */,
 			);
 			path = "Temp Contacts";
 			sourceTree = "<group>";
@@ -78,6 +134,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		8E81F4C424748B440007976A /* TempContactsDir */ = {
+			isa = PBXGroup;
+			children = (
+				8E81F4D6247493D00007976A /* TempContactsDir.entitlements */,
+				8E81F4C524748B440007976A /* CallDirectoryHandler.swift */,
+				8E81F4C724748B440007976A /* Info.plist */,
+			);
+			path = TempContactsDir;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,15 +154,34 @@
 				8E2E630124675B20006A45E9 /* Sources */,
 				8E2E630224675B20006A45E9 /* Frameworks */,
 				8E2E630324675B20006A45E9 /* Resources */,
+				8E81F4CE24748B440007976A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8E81F4C924748B440007976A /* PBXTargetDependency */,
 			);
 			name = "Temp Contacts";
 			productName = "Temp Contacts";
 			productReference = 8E2E630524675B20006A45E9 /* Temp Contacts.app */;
 			productType = "com.apple.product-type.application";
+		};
+		8E81F4C224748B440007976A /* TempContactsDir */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E81F4CB24748B440007976A /* Build configuration list for PBXNativeTarget "TempContactsDir" */;
+			buildPhases = (
+				8E81F4BF24748B440007976A /* Sources */,
+				8E81F4C024748B440007976A /* Frameworks */,
+				8E81F4C124748B440007976A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TempContactsDir;
+			productName = TempContactsDir;
+			productReference = 8E81F4C324748B440007976A /* TempContactsDir.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -109,6 +194,9 @@
 				ORGANIZATIONNAME = "Skies Lab";
 				TargetAttributes = {
 					8E2E630424675B20006A45E9 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					8E81F4C224748B440007976A = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
 				};
@@ -127,6 +215,7 @@
 			projectRoot = "";
 			targets = (
 				8E2E630424675B20006A45E9 /* Temp Contacts */,
+				8E81F4C224748B440007976A /* TempContactsDir */,
 			);
 		};
 /* End PBXProject section */
@@ -142,6 +231,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8E81F4C124748B440007976A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -149,14 +245,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E2E630E24675B20006A45E9 /* Temp_Contacts.xcdatamodeld in Sources */,
+				8E2E632624739B4D006A45E9 /* UserDefaultValue.swift in Sources */,
+				8E2E632224676128006A45E9 /* Contact.swift in Sources */,
+				8E2E632824739BE8006A45E9 /* UserData.swift in Sources */,
+				8E2E632024675E3E006A45E9 /* ContactRow.swift in Sources */,
 				8E2E630924675B20006A45E9 /* AppDelegate.swift in Sources */,
-				8E2E631024675B20006A45E9 /* ContentView.swift in Sources */,
+				8E2E631024675B20006A45E9 /* ContactListView.swift in Sources */,
 				8E2E630B24675B20006A45E9 /* SceneDelegate.swift in Sources */,
+				8E81F4BE2473A1690007976A /* AddContactView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E81F4BF24748B440007976A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E81F4DD24749B960007976A /* UserData.swift in Sources */,
+				8E81F4DC24749B930007976A /* Contact.swift in Sources */,
+				8E81F4DE24749B990007976A /* UserDefaultValue.swift in Sources */,
+				8E81F4C624748B440007976A /* CallDirectoryHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8E81F4C924748B440007976A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E81F4C224748B440007976A /* TempContactsDir */;
+			targetProxy = 8E81F4C824748B440007976A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8E2E631624675B23006A45E9 /* LaunchScreen.storyboard */ = {
@@ -287,7 +406,9 @@
 		8E2E631D24675B23006A45E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Temp Contacts/Temp Contacts.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Temp Contacts/Preview Content\"";
 				DEVELOPMENT_TEAM = 628VZA2867;
@@ -307,7 +428,9 @@
 		8E2E631E24675B23006A45E9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Temp Contacts/Temp Contacts.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Temp Contacts/Preview Content\"";
 				DEVELOPMENT_TEAM = 628VZA2867;
@@ -319,6 +442,48 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skieslab.Temp-Contacts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8E81F4CC24748B440007976A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_ENTITLEMENTS = TempContactsDir/TempContactsDir.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 628VZA2867;
+				INFOPLIST_FILE = TempContactsDir/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.skieslab.Temp-Contacts.TempContactsDir";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8E81F4CD24748B440007976A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_ENTITLEMENTS = TempContactsDir/TempContactsDir.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 628VZA2867;
+				INFOPLIST_FILE = TempContactsDir/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.skieslab.Temp-Contacts.TempContactsDir";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -345,20 +510,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-/* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		8E2E630C24675B20006A45E9 /* Temp_Contacts.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				8E2E630D24675B20006A45E9 /* Temp_Contacts.xcdatamodel */,
+		8E81F4CB24748B440007976A /* Build configuration list for PBXNativeTarget "TempContactsDir" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E81F4CC24748B440007976A /* Debug */,
+				8E81F4CD24748B440007976A /* Release */,
 			);
-			currentVersion = 8E2E630D24675B20006A45E9 /* Temp_Contacts.xcdatamodel */;
-			path = Temp_Contacts.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-/* End XCVersionGroup section */
+/* End XCConfigurationList section */
 	};
 	rootObject = 8E2E62FD24675B20006A45E9 /* Project object */;
 }
