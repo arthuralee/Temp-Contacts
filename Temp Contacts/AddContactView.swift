@@ -54,10 +54,19 @@ struct AddContactView: View {
     
     var body: some View {
         NavigationView {
-            Form {
-                PhoneNumberTextFieldView(phoneNumber: $number)
-                    .keyboardType(.phonePad)
-                TextField("Name", text: $name)
+            VStack(alignment: .leading) {
+                Text("Attach a short name to a phone number, which will be used as Caller ID")
+                    .font(.subheadline)
+                    .foregroundColor(Color.gray)
+                    .multilineTextAlignment(.leading)
+                    .padding(.horizontal)
+                Form {
+                    Section(footer: Text("Contacts are saved on your device and are only used to identify incoming calls")) {
+                        PhoneNumberTextFieldView(phoneNumber: $number)
+                            .keyboardType(.phonePad)
+                        TextField("Name", text: $name)
+                    }
+                }
             }
             .navigationBarTitle(Text("Add contact"))
             .navigationBarItems(leading: Button(action: {
@@ -81,8 +90,6 @@ struct AddContactView: View {
 
 struct AddContactView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            AddContactView(isModalVisible: .constant(true)).environmentObject(UserData())
-        }
+        AddContactView(isModalVisible: .constant(true)).environmentObject(UserData())
     }
 }
