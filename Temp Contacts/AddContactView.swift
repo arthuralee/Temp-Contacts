@@ -59,16 +59,22 @@ struct AddContactView: View {
             }, label: {
                 Text("Done")
             }))
-            .alert(
-                isPresented: $showAlert,
-                content: { Alert(title: Text("Hello world")) }
-            )
         }
         .presentation(shouldDismiss: { () -> Bool in
             return !self.isDirty()
         }, onDismissalAttempt: {
             self.warnAndDismiss()
         })
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Are you sure?"),
+                message: Text("You entered some information but the contact was not saved. Unsaved changes will be lost."),
+                primaryButton: .destructive(Text("Discard")) {
+                    self.isModalVisible.toggle()
+                },
+                secondaryButton: .cancel()
+            )
+        }
     }
 }
 
