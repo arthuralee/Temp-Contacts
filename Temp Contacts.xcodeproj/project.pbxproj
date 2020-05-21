@@ -26,6 +26,8 @@
 		8E81F4E02474B3BB0007976A /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E81F4DF2474B3BB0007976A /* PhoneNumberKit.framework */; };
 		8E81F4E42475BBD80007976A /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E81F4DF2474B3BB0007976A /* PhoneNumberKit.framework */; };
 		8E81F4E62475F6650007976A /* EmptyContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81F4E52475F6640007976A /* EmptyContactsView.swift */; };
+		8E81F4E824764F0B0007976A /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81F4E724764F0B0007976A /* ModalView.swift */; };
+		8E81F4EA247651930007976A /* PhoneNumberTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81F4E9247651930007976A /* PhoneNumberTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		8E81F4D6247493D00007976A /* TempContactsDir.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TempContactsDir.entitlements; sourceTree = "<group>"; };
 		8E81F4DF2474B3BB0007976A /* PhoneNumberKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhoneNumberKit.framework; path = Carthage/Build/iOS/PhoneNumberKit.framework; sourceTree = "<group>"; };
 		8E81F4E52475F6640007976A /* EmptyContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyContactsView.swift; sourceTree = "<group>"; };
+		8E81F4E724764F0B0007976A /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		8E81F4E9247651930007976A /* PhoneNumberTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 				8E2E631F24675E3E006A45E9 /* ContactRow.swift */,
 				8E81F4BD2473A1690007976A /* AddContactView.swift */,
 				8E81F4E52475F6640007976A /* EmptyContactsView.swift */,
+				8E81F4E724764F0B0007976A /* ModalView.swift */,
+				8E81F4E9247651930007976A /* PhoneNumberTextFieldView.swift */,
 			);
 			path = "Temp Contacts";
 			sourceTree = "<group>";
@@ -308,7 +314,9 @@
 				8E2E632624739B4D006A45E9 /* UserDefaultValue.swift in Sources */,
 				8E2E632224676128006A45E9 /* Contact.swift in Sources */,
 				8E2E632824739BE8006A45E9 /* UserData.swift in Sources */,
+				8E81F4EA247651930007976A /* PhoneNumberTextFieldView.swift in Sources */,
 				8E2E632024675E3E006A45E9 /* ContactRow.swift in Sources */,
+				8E81F4E824764F0B0007976A /* ModalView.swift in Sources */,
 				8E2E630924675B20006A45E9 /* AppDelegate.swift in Sources */,
 				8E2E631024675B20006A45E9 /* ContactListView.swift in Sources */,
 				8E2E630B24675B20006A45E9 /* SceneDelegate.swift in Sources */,

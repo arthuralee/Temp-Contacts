@@ -7,50 +7,25 @@
 //
 
 import SwiftUI
-import PhoneNumberKit
-
-struct PhoneNumberTextFieldView: UIViewRepresentable {
-    
-    @Binding var phoneNumber: String
-    
-    func makeUIView(context: Context) -> PhoneNumberTextField {
-        let textField = PhoneNumberTextField()
-        
-        textField.delegate = context.coordinator
-        textField.withExamplePlaceholder = true
-        textField.withPrefix = true
-        textField.placeholder = "Phone number"
-        textField.becomeFirstResponder()
-        
-        return textField
-    }
-
-    func updateUIView(_ view: PhoneNumberTextField, context: Context) {
-        view.text = phoneNumber
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator($phoneNumber)
-    }
-    
-    class Coordinator: NSObject, UITextFieldDelegate {
-        var text: Binding<String>
-
-        init(_ text: Binding<String>) {
-            self.text = text
-        }
-        
-        func textFieldDidEndEditing(_ textField: UITextField) {
-            self.text.wrappedValue = textField.text ?? ""
-        }
-    }
-}
 
 struct AddContactView: View {
     @Binding var isModalVisible: Bool
     @EnvironmentObject var userData: UserData
     @State private var name = ""
     @State private var number = ""
+    @State private var showAlert = false;
+    
+    private func isDirty() -> Bool {
+        return self.name != "" || self.number != ""
+    }
+    
+    private func warnAndDismiss() {
+        if self.isDirty() {
+            self.showAlert = true
+        } else {
+            self.isModalVisible.toggle()
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -70,7 +45,7 @@ struct AddContactView: View {
             }
             .navigationBarTitle(Text("Add contact"))
             .navigationBarItems(leading: Button(action: {
-                self.isModalVisible.toggle()
+                self.warnAndDismiss()
             }, label: {
                 Text("Cancel")
             }), trailing: Button(action: {
@@ -84,7 +59,16 @@ struct AddContactView: View {
             }, label: {
                 Text("Done")
             }))
+            .alert(
+                isPresented: $showAlert,
+                content: { Alert(title: Text("Hello world")) }
+            )
         }
+        .presentation(shouldDismiss: { () -> Bool in
+            return !self.isDirty()
+        }, onDismissalAttempt: {
+            self.warnAndDismiss()
+        })
     }
 }
 
