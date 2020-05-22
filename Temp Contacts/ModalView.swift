@@ -12,8 +12,6 @@ import SwiftUI
 
 struct ModalView<T: View>: UIViewControllerRepresentable {
     let view: T
-    let onDismissalAttempt: (()->())?
-    let shouldDismiss: (()->Bool)?
 
     func makeUIViewController(context: Context) -> UIHostingController<T> {
         UIHostingController(rootView: view)
@@ -35,17 +33,13 @@ struct ModalView<T: View>: UIViewControllerRepresentable {
         }
 
         func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
-            return modalView.shouldDismiss?() ?? true
-        }
-
-        func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
-            modalView.onDismissalAttempt?()
+            return false
         }
     }
 }
 
 extension View {
-    func presentation(shouldDismiss: (()->Bool)? = nil, onDismissalAttempt: (()->())? = nil) -> some View {
-        ModalView(view: self, onDismissalAttempt: onDismissalAttempt, shouldDismiss: shouldDismiss)
+    func disableSwipeDown() -> some View {
+        ModalView(view: self)
     }
 }

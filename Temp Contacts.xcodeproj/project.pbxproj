@@ -122,22 +122,17 @@
 		8E2E630724675B20006A45E9 /* Temp Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				8E2E632124676128006A45E9 /* Contact.swift */,
-				8E2E632524739B4D006A45E9 /* UserDefaultValue.swift */,
-				8E2E632724739BE8006A45E9 /* UserData.swift */,
-				8E81F4D5247493A30007976A /* Temp Contacts.entitlements */,
 				8E2E630824675B20006A45E9 /* AppDelegate.swift */,
-				8E2E630A24675B20006A45E9 /* SceneDelegate.swift */,
-				8E2E630F24675B20006A45E9 /* ContactListView.swift */,
 				8E2E631124675B23006A45E9 /* Assets.xcassets */,
-				8E2E631624675B23006A45E9 /* LaunchScreen.storyboard */,
+				8E2E632124676128006A45E9 /* Contact.swift */,
 				8E2E631924675B23006A45E9 /* Info.plist */,
+				8E2E631624675B23006A45E9 /* LaunchScreen.storyboard */,
 				8E2E631324675B23006A45E9 /* Preview Content */,
-				8E2E631F24675E3E006A45E9 /* ContactRow.swift */,
-				8E81F4BD2473A1690007976A /* AddContactView.swift */,
-				8E81F4E52475F6640007976A /* EmptyContactsView.swift */,
-				8E81F4E724764F0B0007976A /* ModalView.swift */,
-				8E81F4E9247651930007976A /* PhoneNumberTextFieldView.swift */,
+				8E2E630A24675B20006A45E9 /* SceneDelegate.swift */,
+				8E81F4D5247493A30007976A /* Temp Contacts.entitlements */,
+				8E2E632724739BE8006A45E9 /* UserData.swift */,
+				8E2E632524739B4D006A45E9 /* UserDefaultValue.swift */,
+				8E733F86247883E300867C57 /* Views */,
 			);
 			path = "Temp Contacts";
 			sourceTree = "<group>";
@@ -148,6 +143,19 @@
 				8E2E631424675B23006A45E9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8E733F86247883E300867C57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8E81F4BD2473A1690007976A /* AddContactView.swift */,
+				8E2E630F24675B20006A45E9 /* ContactListView.swift */,
+				8E2E631F24675E3E006A45E9 /* ContactRow.swift */,
+				8E81F4E52475F6640007976A /* EmptyContactsView.swift */,
+				8E81F4E724764F0B0007976A /* ModalView.swift */,
+				8E81F4E9247651930007976A /* PhoneNumberTextFieldView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		8E81F4C424748B440007976A /* TempContactsDir */ = {

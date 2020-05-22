@@ -13,14 +13,18 @@ struct AddContactView: View {
     @EnvironmentObject var userData: UserData
     @State private var name = ""
     @State private var number = ""
-    @State private var showAlert = false;
+    @State private var showAlert = false
     
-    private func isDirty() -> Bool {
-        return self.name != "" || self.number != ""
+    var isDirty: Bool {
+        name != "" || number != ""
+    }
+    
+    var formIsValid: Bool {
+        return self.name != "" && self.number.count >= 4
     }
     
     private func warnAndDismiss() {
-        if self.isDirty() {
+        if isDirty {
             self.showAlert = true
         } else {
             self.isModalVisible.toggle()
@@ -30,7 +34,7 @@ struct AddContactView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                Text("Attach a short name to a phone number, which will be used as Caller ID")
+                Text("Attach a short name to a phone number, which will be used as Caller ID. Country codes are optional")
                     .font(.subheadline)
                     .foregroundColor(Color.gray)
                     .multilineTextAlignment(.leading)
@@ -58,13 +62,8 @@ struct AddContactView: View {
                 self.isModalVisible.toggle()
             }, label: {
                 Text("Done")
-            }))
+            }).disabled(!self.formIsValid))
         }
-        .presentation(shouldDismiss: { () -> Bool in
-            return !self.isDirty()
-        }, onDismissalAttempt: {
-            self.warnAndDismiss()
-        })
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text("Are you sure?"),

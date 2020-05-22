@@ -54,7 +54,8 @@ struct ContactListView: View {
             }, trailing: EditButton())
         .sheet(isPresented: $isAddContactModalVisible) {
             AddContactView(isModalVisible: self.$isAddContactModalVisible).environmentObject(self.userData)
-            }
+            .disableSwipeDown()
+        }
         .environment(\.editMode, $editMode)
     }
 }
